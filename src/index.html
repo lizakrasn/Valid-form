@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/index.sass">
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+
+    <section class="section">
+      <h1 class="section__title">Please enter the form</h1>
+
+      <form class="form section__form" method="GET">
+        <label class="input form__input" for="name">
+          User name
+          <input
+            class="input__field"
+            id="name"
+            type="text"
+            name="name"
+            value="Liza"
+          >
+        </label>
+
+        <label class="input form__input" for="surname">
+          User surname
+          <input
+            class="input__field"
+            id="surname"
+            type="text"
+            name="surname"
+            value="Krasnoshchok"
+          >
+        </label>
+
+        <label class="input form__input" for="telephone">
+          User telephone
+          <input
+            class="input__field"
+            id="telephone"
+            type="tel"
+            name="telephone"
+            value="+38(063)-235-32-55"
+          >
+        </label>
+
+        <label class="input form__input" for="email">
+          User email
+          <input
+            class="input__field"
+            id="email"
+            type="email"
+            name="email"
+            value="liza@coderiver.com.ua"
+          >
+        </label>
+
+        <label class="input form__input" for="password">
+          User password
+          <input
+            class="input__field"
+            id="password"
+            type="password"
+            name="password"
+            value="1111"
+          >
+        </label>
+
+        <button class="button form__button" type="submit">
+          Submit
+        </button>
+      </form>
+    </section>
+
+  </body>
+</html>
