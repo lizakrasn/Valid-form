@@ -10,35 +10,39 @@
   <body>
 
     <section class="section">
-      <h1 class="section__title">Please enter the form</h1>
-
       <form class="form section__form" method="GET">
-        <label class="input form__input" for="name">
+        <h1 class="form__title">Please enter the form</h1>
+
+        <label class="form__input-label" for="name">
           User name
           <input
-            class="input__field"
+            class="input form__input"
             id="name"
             type="text"
             name="name"
-            value="Liza"
+            value=""
+            data-input-text
           >
+          <p class="input__error-messege">Please, enter your name</p>
         </label>
+        
 
-        <label class="input form__input" for="surname">
+        <label class="form__input-label" for="surname">
           User surname
           <input
-            class="input__field"
+            class="input form__input"
             id="surname"
             type="text"
             name="surname"
             value="Krasnoshchok"
+            data-input-text
           >
         </label>
 
-        <label class="input form__input" for="telephone">
+        <label class="form__input-label" for="telephone">
           User telephone
           <input
-            class="input__field"
+            class="input form__input"
             id="telephone"
             type="tel"
             name="telephone"
@@ -46,25 +50,27 @@
           >
         </label>
 
-        <label class="input form__input" for="email">
+        <label class="form__input-label" for="email">
           User email
           <input
-            class="input__field"
+            class="input form__input"
             id="email"
             type="email"
             name="email"
             value="liza@coderiver.com.ua"
+            data-input-email
           >
         </label>
 
-        <label class="input form__input" for="password">
+        <label class="form__input-label" for="password">
           User password
           <input
-            class="input__field"
+            class="input form__input"
             id="password"
             type="password"
             name="password"
             value="1111"
+            data-input-text
           >
         </label>
 
