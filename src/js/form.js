@@ -38,7 +38,9 @@ const isValidInput = (input) => {
   }
 }
 
-export const validateForm = (form, inputs) => {
+export const validateForm = (form) => {
+  const inputs = [...form.querySelectorAll('.field__input')]
+
   form.addEventListener('submit', (event) => {
     const validationResult = inputs.map(input => {
       input.parentElement.classList.remove('field_success', 'field_invalid')
