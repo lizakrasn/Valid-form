@@ -1,20 +1,11 @@
 const isEmailInputsValid = (input) => {
-  console.log('start email valid.')
-  const inputValue = input.value
-  const firstLetter = inputValue[0]
-  const lastLetter = inputValue[inputValue.length - 1]
+  const emailRules = /^[^.@]+.*@.*[^.@]$/
 
-  if(inputValue.length > 3) {
-    if(firstLetter !== '@' && firstLetter !== '.') {
-      if(lastLetter !== '@' && lastLetter !== '.') {
-        if(inputValue.includes('@')) {
-          return true
-        }
-      }
-    }
+  if(input.value.match(emailRules)) {
+    return true
+  } else {
+    return false
   }
-
-  return false
 }
 
 const isTelInputValid = (input) => {
