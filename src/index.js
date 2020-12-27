@@ -1,4 +1,6 @@
-import { isTextInputsValid, isEmailInputsValid } from "./js/form"
+import { validateForm } from "./js/form"
 
-isTextInputsValid()
-isEmailInputsValid()
+const inputs = [...document.querySelectorAll('.field__input')]
+const form = document.querySelector('.form')
+
+validateForm(form, inputs)

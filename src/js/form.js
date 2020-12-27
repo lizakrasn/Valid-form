@@ -1,26 +1,6 @@
-const textInputs = [...document.querySelectorAll('[data-input-text]')]
-const emailInput = document.querySelector('[data-input-email]')
-
-export const isTextInputsValid = () => {
-  return textInputs.map(input => {
-    const inputValue = input.value
-
-    if(inputValue.length > 0) {
-      input.classList.remove('input_invalid')
-      input.classList.add('input_success')
-
-      return true
-    }
-
-    input.classList.add('input_invalid')
-  })
-  .some(inputResult => {
-    inputResult === false
-  })
-}
-
-export const isEmailInputsValid = () => {
-  const inputValue = emailInput.value
+const isEmailInputsValid = (input) => {
+  console.log('start email valid.')
+  const inputValue = input.value
   const firstLetter = inputValue[0]
   const lastLetter = inputValue[inputValue.length - 1]
 
@@ -28,19 +8,63 @@ export const isEmailInputsValid = () => {
     if(firstLetter !== '@' && firstLetter !== '.') {
       if(lastLetter !== '@' && lastLetter !== '.') {
         if(inputValue.includes('@')) {
-
-          emailInput.classList.remove('input_invalid')
-          emailInput.classList.add('input_success')
-
           return true
         }
       }
     }
   }
 
-  emailInput.classList.add('input_invalid')
+  return false
 }
 
-// export const handleOnSubmit = () => {
+const isTelInputValid = (input) => {
+  console.log('start tel valid.')
+  const phoneRules = /^\+?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/
 
-// }
+  if(input.value.match(phoneRules)) {
+    return true
+  } else {
+    return false
+  }
+}
+
+const isValidInput = (input) => {
+  if (input.value.length === 0 && input.hasAttribute('required')) {
+    return false
+  }
+
+  const typeInput = input.getAttribute('type')
+
+  switch(typeInput) {
+    case 'email':
+      return isEmailInputsValid(input)
+
+    case 'tel':
+      return isTelInputValid(input)
+    
+    default:
+      return true
+  }
+}
+
+export const validateForm = (form, inputs) => {
+  form.addEventListener('submit', (event) => {
+    const validationResult = inputs.map(input => {
+      input.parentElement.classList.remove('field_success', 'field_invalid')
+
+      const validationResult = isValidInput(input)
+  
+      if (validationResult) {
+        input.parentElement.classList.add('field_success')
+      } else {
+        input.parentElement.classList.add('field_invalid')
+      }
+
+      return validationResult
+    })
+
+    if (!validationResult.every(result => result === true)) {
+      event.preventDefault()
+    }
+  })
+}

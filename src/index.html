@@ -10,68 +10,72 @@
   <body>
 
     <section class="section">
-      <form class="form section__form" method="GET">
+      <form class="form section__form" method="GET" novalidate>
         <h1 class="form__title">Please enter the form</h1>
 
-        <label class="form__input-label" for="name">
+        <label class="field form__field" for="name">
           User name
           <input
-            class="input form__input"
+            class="field__input"
             id="name"
             type="text"
             name="name"
-            value=""
-            data-input-text
+            placeholder="Liza"
+            required
           >
-          <p class="input__error-messege">Please, enter your name</p>
+          <p class="field__error">Please, enter your name</p>
         </label>
         
 
-        <label class="form__input-label" for="surname">
+        <label class="field form__field" for="surname">
           User surname
           <input
-            class="input form__input"
+            class="field__input"
             id="surname"
             type="text"
             name="surname"
-            value="Krasnoshchok"
-            data-input-text
+            placeholder="Krasnoshchok"
+            required
           >
+          <p class="field__error">Please, enter your surname</p>
         </label>
 
-        <label class="form__input-label" for="telephone">
+        <label class="field form__field" for="telephone">
           User telephone
           <input
-            class="input form__input"
+            class="field__input"
             id="telephone"
             type="tel"
             name="telephone"
-            value="+38(063)-235-32-55"
+            placeholder="+380630000000"
+            required
           >
+          <p class="field__error">Please, enter valid number (+380630000000)</p>
         </label>
 
-        <label class="form__input-label" for="email">
+        <label class="field form__field" for="email">
           User email
           <input
-            class="input form__input"
+            class="field__input"
             id="email"
             type="email"
             name="email"
-            value="liza@coderiver.com.ua"
-            data-input-email
+            placeholder="liza@coderiver.com.ua"
+            required
           >
+          <p class="field__error">Please, enter valid email (name@example.com)</p>
         </label>
 
-        <label class="form__input-label" for="password">
+        <label class="field form__field" for="password">
           User password
           <input
-            class="input form__input"
+            class="field__input"
             id="password"
             type="password"
             name="password"
-            value="1111"
-            data-input-text
+            required
           >
+          <p class="field__error">Please, enter your password</p>
         </label>
 
         <button class="button form__button" type="submit">

@@ -1,0 +1,31 @@
+.field
+  $this: &
+
+  padding-bottom: 5px
+  width: 100%
+
+  font-size: 18px
+
+  &__input
+    display: block
+    width: 100%
+    padding: 10px
+    margin: 5px 0
+
+  &__error
+    margin-top: 5px
+    visibility: hidden
+
+    font-size: 14px
+    color: red
+
+  &_success
+    #{$this}__input
+      border: 1px solid #48c774
+
+  &_invalid
+    #{$this}__input
+      border: 1px solid red
+
+    #{$this}__error
+      visibility: visible
